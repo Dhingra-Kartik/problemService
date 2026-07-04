@@ -10,7 +10,9 @@ class ProblemRepository{
             title: Pdata.title,
             difficulty: Pdata.difficulty,
             description: Pdata.description,
-            editorial: Pdata.editorial
+            editorial: Pdata.editorial,
+            testCases: (Pdata.testCases) ? Pdata.testCases : [],
+            codeStubs: Pdata.codeStubs
         });
         return problem;
 } catch (error){

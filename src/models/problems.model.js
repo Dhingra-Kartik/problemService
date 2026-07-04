@@ -15,7 +15,6 @@ const problemSchema = new mongoose.Schema({
     difficulty: {
         type: String,
         enum: ['Easy', 'Medium', 'Hard'],
-        required: true,
         default: 'Easy'
     },
 
@@ -34,7 +33,26 @@ const problemSchema = new mongoose.Schema({
 
     editorial: {
         type: String
-    }
+    },
+
+    codeStubs: [
+        {
+            language: {
+            type: String,
+            enum: ["CPP", "JAVA", "PYTHON"],
+            required: true
+        },
+            startSnippet: {
+            type: String,
+        },
+            userSnippet: {
+            type: String,
+        },
+            endSnippet: {
+            type: String,
+        },
+        }
+    ]
 });
 
 const Problem = mongoose.model('Problem', problemSchema);
