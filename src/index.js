@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser')
+const cors = require('cors');
 const {PORT} = require('./config/server.config');
 const apiRouter = require('./routes');
 const BaseError = require('./errors/baseError');
@@ -8,6 +9,7 @@ const connectToDb = require('./config/db.config');
 const mongoose = require('mongoose');
 
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: true})); //qs library is used when you do extended:true

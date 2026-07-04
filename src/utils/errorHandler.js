@@ -12,7 +12,7 @@ function ErrorHandler(err, req, res, next){
         });
     }
 
-    logger.error("Something went wrong, try again");
+    logger.error("Caught by handler, Something went wrong, try again");
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             success: false, 
             message: `Something went wrong`,
